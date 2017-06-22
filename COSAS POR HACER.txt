@@ -1,0 +1,34 @@
+
+To make
+    --Mejorar la velocidad de carga
+    --Loading mientras mientras carga la vista
+    --Seleccionar a uno de los contactos duplicados.
+    --colocar scroll en listas de contactos
+
+Ready
+    --Revisar Los contactos duplicados por numero.
+    --Eliminar salto que se produce al ocultar titulo
+    --Mensaje de no se encontraron contactos duplicados
+    --Cambiar el color de la barra cuando alla algun checkbox seleccionado
+    --Sigue listando los contactos a pesar de haber eliminados sus duplicados "Solo en duplicados por numero"
+    --Imprimir objeto de error al eliminar un contacto
+    --Refrescar los contactos al eliminar
+    --Agregar mensaje de confirmacion antes de eliminar
+    --Ocultar el boton de eliminar cunado no hay ningun elemento seleccionado
+    --Ponerle una flecha en vez de un relleno al checkbox
+    --Ocultar el titulo de la aplicación
+    2) Al darle a la papelerea para borrar todos los duplicados --> 
+    debe poner cuantos duplicados va a borrar SI CERO o 450... importante este mensjae porfavor.
+    6) He probado el by NAME y va perfecto. Detecta el duplicado.  Sin embargo despues de BORRADO, 
+    no actualiza la lista y siguen saliendo los duplicados.. hay que salir de la app para que se refresque (ERROR). Lo he
+    hecho nuevamente, y a al segunda ha ido bien (desconozco el porqué).
+    3) El cuadrado de al lado de la papelera cual es su funcion? no la entiendo.
+    5) Al borrar By number, no entiendo la funcionalidad, pues deja borrar uno por uno todos los contactos si queremos. 
+    no lo entiendo.
+    4) Lo de mostrar si son contactos de whatsapp o de x, no tiene importancia, 
+    solo hay que mirar nombres y numeros, nada más. Tener en cuenta que un contacto puede tener 20 numeros dentro del 
+    contacto de android, la busqueda ha de ser interna tb.
+
+Jordi (Observaciones)
+    1)El splash inicial (banner antes de cargar la app) y el logo de la app deben pedirlo a 
+    elias@hostienda.com porfavor, pues ahora salen vacíos.

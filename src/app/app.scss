@@ -1,0 +1,150 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.toolbar-background-md {
+    border-color: #fff9f9;
+}
+.toolbar-title-md {
+    color: white;
+    margin-top: 0px;
+    padding: 0 !important;
+}
+.segment-md .segment-button {
+    color: white;
+}
+.segment-md .segment-button.segment-activated {
+border-color: #B3E5FC;}
+
+.toolbar-title-ios {
+    color: white;
+}
+.segment-ios .segment-button {
+    border-color: white;
+    color: white;
+}
+.toolbar-background-ios {
+    background: #0288D1;
+}
+.segment-ios .segment-button.segment-activated {
+    background-color: white;
+}
+.center-title{
+    text-align: center;
+}
+.button-clear-md-danger {
+color: #f8f8f8;}
+
+.alin-lef{
+    margin-top: 8px;
+}
+
+.button-inner {
+display: table!important;}
+.toolbar-md {
+padding: 0px;}
+  
+.spinner svg {
+  width: 28px;
+  height: 28px;
+  stroke: #444;
+  fill: #444;
+}
+
+input[type="checkbox"]{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-color: #787878;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    margin: 0 5px 0 0;
+    background:white;
+    transition-duration: 280ms;
+    transition-property: background;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    margin-left: 8%;
+    margin-bottom: -5px;
+    margin-top: 10px; 
+}
+.label1{
+    text-align: center;
+}
+input[type="checkbox"]#checkbox1:checked{
+    // border-color: #2196F3;
+    position: relative;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    background-color: #fff;
+    transition-duration: 280ms;
+    transition-property: background;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="checkbox"]#checkbox1:checked::after{
+    opacity: 1;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 4px;
+	background: transparent;
+	top: 3px;
+	left: 2px;
+	border: 3px solid #2196F3;
+	border-top: none;
+	border-right: none;
+	transform: rotate(-45deg);
+}
+
+.contenedor{
+    text-align: -webkit-right;
+}
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-title{
+    height: 100% !important;
+    padding-top: 20px !important; 
+}
+.toolbar-ios ion-title {
+    padding: 0 0 0 !important;
+}
+ .toolbar-title-ios {
+    text-align: left;
+    padding-left: 13px;
+    font-size: 2rem;
+}
+ion-grid{
+    height: 50px;
+}
+.margen{
+    margin-top: 5px;
+}
+.button-ios{
+    font-size: 1.4rem;
+}
+.etiq{
+    color:white;
+    font-size:smaller;
+}
+.etq1{
+    margin-top: 7px;
+}
+.btn{
+    font-size: 1.3rem;
+}

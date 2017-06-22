@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar [color]="navb">
+    <ion-grid>
+      <ion-row >
+        <ion-col width-67  >
+          <ion-title class="margen" *ngIf=" !isNoneChecked(segmento)">
+            Duplicate contacts
+          </ion-title >
+          <ion-title class= "etq1" *ngIf="isNoneChecked(segmento)" >
+            <button class="btn" ion-button color="light" clear icon-only (click)="NoneChecked(segmento)">
+              <ion-icon name='arrow-back' is-active="false"></ion-icon>
+            </button>
+           {{cant_seleccionados}}
+          </ion-title>
+        </ion-col>
+        <ion-col width-33 class="contenedor">
+          <button *ngIf="isNoneChecked(segmento)" ion-button color="light" clear icon-only (click)="alerta(segmento)">
+            <ion-icon name='md-trash' is-active="false"></ion-icon>
+          </button>
+          <input *ngIf="ubic_correcta" type="checkbox"  class= "md-input ios-input" id="checkbox1" name="all" [checked]="isAllChecked(segmento)" (change)="CheckAll($event, segmento)" (ionChange)="getChecked(segmento)"/> 
+          <label class= "etiq" *ngIf= "ubic_correcta">Select All</label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+  <ion-toolbar no-border-top  class="seleccionado" [color]="navb">
+    <ion-segment [(ngModel)]="segmento" (click)= "cant_duplicados(segmento)">
+      <ion-segment-button value="all" >
+        All contacts
+      </ion-segment-button>
+      <ion-segment-button value="name" >
+        By name
+      </ion-segment-button>
+      <ion-segment-button value="number" >
+        By number
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+ <ion-refresher (ionRefresh)="refrescar($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div [ngSwitch]="segmento">
+    <ion-list inset *ngSwitchCase="'all'">
+      <ion-item *ngFor="let item of contactos; let i = index">
+        {{i+", "+item.id}} {{item.displayName}} 
+       <p *ngFor="let number of item.phoneNumbers">
+          {{number.type}} : {{number.value}} 
+       </p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list inset *ngSwitchCase="'name'">
+      <ion-label class= "label1" *ngIf= "prueba(segmento)"> No se han encontrado contactos <br> duplicados por nombre</ion-label>
+      <ion-item *ngFor="let duplicado_nom of duplicados_nom; let i = index">
+        <ion-label>
+           {{duplicado_nom.displayName}}
+          <p *ngFor="let number_nro of duplicado_nom.phoneNumbers">
+          {{number_nro.type}} : {{number_nro.value}} 
+          </p>
+        </ion-label>
+        <ion-checkbox  name="nom[]" [(ngModel)]="duplicado_nom.state" (ionChange)= "getChecked(segmento)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-list inset *ngSwitchCase="'number'">
+      <ion-label class= "label1" *ngIf= "prueba(segmento)"> No se han encontrado contactos <br> duplicados por número </ion-label>
+      <ion-item *ngFor="let duplicado_nro of duplicados_nro; let i = index">
+        <ion-label>{{duplicado_nro.displayName}} 
+          <p *ngFor="let number_nro of duplicado_nro.phoneNumbers">
+          {{number_nro.type}} : {{number_nro.value}} 
+          </p>
+        </ion-label>        
+        <ion-checkbox name="nro[]" [(ngModel)]="duplicado_nro.state" (ionChange)="getChecked(segmento)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+</div>
+</ion-content>
